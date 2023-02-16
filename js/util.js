@@ -5,8 +5,20 @@ const getRandomPositiveInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const getRandomArrayElement = (elements) => {
-  return elements[getRandomPositiveInteger(0, elements.length - 1)];
-};
+// const getRandomArrayElement = (elements) => {
+//   return elements[getRandomPositiveInteger(0, elements.length - 1)];
+// };
 
-export {getRandomArrayElement};
+// const isEscapeKey = (evt) => {
+//   return evt.key === 'Escape';
+// };
+
+// const isEnterKey = (evt) => {
+//   return evt.key === 'Enter';
+// };
+
+const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
+const isEscapeKey = (evt) => evt.key === 'Escape';
+const isEnterKey = (evt) => evt.key === 'Enter';
+
+export {getRandomArrayElement, isEscapeKey, isEnterKey};

@@ -57,25 +57,30 @@
     <div class="demo"></div>
 
     <div class="setup-open">
-      <img src="./img/user-1.jpg" class="setup-open-icon" alt="Button to open setup window">
+      <img src="./img/user-1.jpg" class="setup-open-icon" alt="Button to open setup window" tabindex="0">
     </div>
   </header>
 
   <div class="overlay setup hidden">
-    <form class="setup-wizard-form">
+    <form class="setup-wizard-form" method="POST" enctype="multipart/form-data" action="https://25.javascript.pages.academy/code-and-magick" autocomplete="off">
 
       <div class="setup-title">
         <div class="setup-user">
           <div class="upload">
             <img class="setup-user-pic" src="./img/user-1.jpg" alt="User photo">
+            <!-- аватарка -->
             <input type="file" name="avatar">
           </div>
-          <label>
-            <input type="text" class="setup-user-name" value="Синий Пендальф">
+          <label class="setup-wizard-form__element">
+            <!-- имя волшебника -->
+            <input type="text" class="setup-user-name" value="Синий Пендальф" name="username" required minlength="2" maxlength="25"
+            data-pristine-required-message = "Обязательное поле"
+            data-pristine-minlength-message = "Минимальная длина 2 символа"
+            data-pristine-maxlength-message = "Максимальная длина 25 символов">
           </label>
         </div>
 
-        <span class="setup-close">×</span>
+        <span class="setup-close" tabindex="0">×</span>
       </div>
 
       <div class="setup-artifacts-shop">
@@ -103,10 +108,13 @@
               </g>
             </svg>
           </div>
+          <input type="hidden" name="coat-color" value="rgb(101, 137, 164)">
+          <input type="hidden" name="eyes-color" value="black">
         </div>
 
         <div class="setup-fireball-wrap">
           <div class="setup-fireball"></div>
+          <input type="hidden" name="fireball-color" value="#ee4830">
         </div>
 
         <div class="setup-artifacts">
@@ -167,7 +175,8 @@
     </div>
   </template>
   
-  <script src="./js/main.js" type="module"></script>  
+  <script src="pristine/pristine.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
 </body>
 
 </html>
