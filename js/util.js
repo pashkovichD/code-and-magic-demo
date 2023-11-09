@@ -18,7 +18,7 @@ const getRandomPositiveInteger = (a, b) => {
 // };
 
 const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
-const isEscapeKey = (evt) => evt.key === 'Escape';
-const isEnterKey = (evt) => evt.key === 'Enter';
+const isEscapeKey = (evt) => evt.key === 'Escape'; // возвращает true, если нажата клавиша ESC (может часто где в коде встречаться)
+const isEnterKey = (evt) => evt.key === 'Enter'; // возвращает true, если нажата клавиша ENTER (может часто где в коде встречаться)
 
 export {getRandomArrayElement, isEscapeKey, isEnterKey};
