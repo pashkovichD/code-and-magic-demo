@@ -55,12 +55,20 @@ const getRandomPositiveInteger = (a, b) => {
     return Math.floor(result);
 };
 
+/* Сделаем код понятней.
+    Удобнее будет выделить отдельную функцию, которая будет получать массив и возвращать случайный элемент этого массива
+*/
+
+const getRandomArrayElement = (elements) => {
+    return elements[getRandomPositiveInteger(0, elements.length - 1)];
+};
+
 /* Функция, которая создает волшебника */
 const createWizard = () => {    
     return {
-        name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)] + ' ' + SURNAMES[getRandomPositiveInteger(0, SURNAMES.length - 1)],
-        coatColor: COAT_COLORS[getRandomPositiveInteger(0, COAT_COLORS.length - 1)],
-        eyesColor: EYES_COLORS[getRandomPositiveInteger(0, EYES_COLORS.length - 1)]
+        name: getRandomArrayElement(NAMES) + ' ' + getRandomArrayElement(SURNAMES),
+        coatColor: getRandomArrayElement(COAT_COLORS),
+        eyesColor: getRandomArrayElement(EYES_COLORS)
     };
 };
 
