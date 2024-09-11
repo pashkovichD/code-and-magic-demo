@@ -56,16 +56,11 @@ const getRandomPositiveInteger = (a, b) => {
 };
 
 /* Функция, которая создает волшебника */
-const createWizard = () => {
-    const randomNameIndex = getRandomPositiveInteger(0, NAMES.length - 1);
-    const randomSurnameIndex = getRandomPositiveInteger(0, SURNAMES.length - 1);
-    const randomCoatColorIndex = getRandomPositiveInteger(0, COAT_COLORS.length - 1);
-    const randomEyesColorIndex = getRandomPositiveInteger(0, EYES_COLORS.length - 1);
-    
+const createWizard = () => {    
     return {
-        name: NAMES[randomNameIndex] + ' ' + SURNAMES[randomSurnameIndex],
-        coatColor: COAT_COLORS[randomCoatColorIndex],
-        eyesColor: EYES_COLORS[randomEyesColorIndex]
+        name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)] + ' ' + SURNAMES[getRandomPositiveInteger(0, SURNAMES.length - 1)],
+        coatColor: COAT_COLORS[getRandomPositiveInteger(0, COAT_COLORS.length - 1)],
+        eyesColor: EYES_COLORS[getRandomPositiveInteger(0, EYES_COLORS.length - 1)]
     };
 };
 
