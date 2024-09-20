@@ -9,6 +9,8 @@
     eyesColor, строка - случайный цвет глаз персонажда на выбор.
 */
 
+import {getRandomArrayElement} from "./util.js";
+
 const NAMES = [
     'Иван',    
     'Хуан Себастьян',    
@@ -48,21 +50,6 @@ const EYES_COLORS = [
     'green'
 ];
 
-const getRandomPositiveInteger = (a, b) => {
-    const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-    const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-    const result = Math.random() * (upper - lower + 1) + lower;
-    return Math.floor(result);
-};
-
-/* Сделаем код понятней.
-    Удобнее будет выделить отдельную функцию, которая будет получать массив и возвращать случайный элемент этого массива
-*/
-
-const getRandomArrayElement = (elements) => {
-    return elements[getRandomPositiveInteger(0, elements.length - 1)];
-};
-
 /* Функция, которая создает волшебника */
 const createWizard = () => {    
     return {
@@ -72,4 +59,17 @@ const createWizard = () => {
     };
 };
 
-console.log(createWizard());
+// const similarWizards = Array.from({length: SIMILAR_WIZARD_COUNT}, createWizard);
+
+// заменяем переменную, в которой лежит массив объектов, на функцию, которая возвращает массив объектов,
+//т.е. предоставляет интерфейс для получения массива волшебников
+
+/* задача функции createWizards - вернуть массив объектов, т.е. данный модуль предоставляет интерфейс (функцию), 
+ с помощью которого(ой) вы можете получить массив волшебников...
+ */
+const createWizards = (count) => Array.from({length: count}, createWizard);
+
+
+// console.log(similarWizards);
+//...а потом её экспортируем
+export {createWizards};
