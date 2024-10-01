@@ -7,10 +7,13 @@
     ...
  */
 import './setup.js';
-import {createWizards} from './data.js';
+import './popup.js';
 
-const SIMILAR_WIZARD_COUNT = 4;
+/* Для  проверки работы на ранних этапах разработки */
+// import {createWizards} from './data.js';
 
-console.log(
-    createWizards(SIMILAR_WIZARD_COUNT)
-);
+// const SIMILAR_WIZARD_COUNT = 4;
+
+// console.log(
+//     createWizards(SIMILAR_WIZARD_COUNT)
+// );
